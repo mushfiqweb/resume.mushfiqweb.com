@@ -5408,13 +5408,14 @@ input[type="button"].btn-block {
 .badge {
 	display: inline-block;
 	padding: .25em .4em;
-	font-size: 75%;
+	margin: 5px;
+	font-size: 1em;
 	font-weight: 700;
 	line-height: 1;
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: baseline;
-	border-radius: .25rem;
+	border-radius: 2px;
 	-webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out
 }
@@ -5550,20 +5551,15 @@ a.badge-danger.focus {
 
 .badge-light {
 	color: #292929;
-	background-color: #c2c2c2
+	background-color: #e5e5e5	
 }
 
 a.badge-light:hover,
 a.badge-light:focus {
 	color: #292929;
-	background-color: #a9a8a8
+	background-color: #d7d5d5
 }
 
-a.badge-light:focus,
-a.badge-light.focus {
-	outline: 0;
-	box-shadow: 0 0 0 .2rem rgba(194, 194, 194, 0.5)
-}
 
 .badge-dark {
 	color: #fff;
@@ -8746,7 +8742,7 @@ button.bg-dark:focus {
 
 .mb-4,
 .my-4 {
-	margin-bottom: 1.5rem !important
+	margin-bottom: 0.5rem !important
 }
 
 .ml-4,
@@ -10935,5 +10931,34 @@ a.resume-link:hover {
 
 .work-company{
 	font-size: 14px;
+	font-weight: bold;
+}
+
+.resume-sub-heading {
+	margin-left: 1rem;
+	position: relative;
+	padding-left: 1rem;
+	font-size: 0.9rem;
+	letter-spacing: 0.05rem;
+	color: #54B689
+}
+
+.resume-sub-heading:before {
+	content: "";
+	display: inline-block;
+	width: 3px;
+	height: 100%;
+	background: #54B689;
+	position: absolute;
+	left: 0;
+	top: 0
+}
+
+.tech > li {
+	display: inline;
+}
+
+.tech-caption {
+	font-size: 16px;
 	font-weight: bold;
 }
