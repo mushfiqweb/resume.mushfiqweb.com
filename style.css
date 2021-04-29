@@ -1,5 +1,38 @@
  
- 
+ /* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: graytext white;
+  }
+  
+  /* Works on Chrome/Edge/Safari */
+  *::-webkit-scrollbar {
+	width: 6px;
+	  height: 4px;
+  }
+  *::-webkit-scrollbar-track {
+	background: white;
+  }
+  *::-webkit-scrollbar-thumb {
+	background-color: graytext;
+	border-radius: 20px;
+	border: 1px solid white;
+  }
+
+
+::-moz-selection {
+	color: white;
+	background: #565555;
+  }
+  
+  ::selection {
+	color: white;
+	background: #565555;
+  }
+
+  
+  
 .link{
     display:inline-block;
     position:relative;
