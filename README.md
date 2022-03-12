@@ -1,7 +1,7 @@
 ### Hi there!
 **I am a Full Stack Developer working on Application Development for quite some time!**
 
-**This repo is for the application to shows my resume.**
+**This repo is for the application to show my resume.**
 
 **The App is hosted on [Firebase](https://firebase.google.com/) at [resume.mushfiqweb.com](https://resume.mushfiqweb.com/).**
 
