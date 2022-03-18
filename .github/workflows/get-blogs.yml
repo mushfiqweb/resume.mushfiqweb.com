@@ -1,30 +1,14 @@
-name: Action to get blogs
+name: Latest blog post workflow
 on:
-  schedule:
-    # Runs every day at 9am UTC
-    - cron: '0 4 * * *'
+  schedule: 
+    - cron: '* 21 * * *' # Runs every minute of 21th hour
   workflow_dispatch: # Run workflow manually (without waiting for the cron to be called), through the Github Actions Workflow page directly
-
 jobs:
-  build:
-    # The type of runner that the job will run on
+  update-readme-with-blog:
+    name: Update this repo's README with latest blog posts
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2
-      - name: Get RSS Feed
-        uses: kohrongying/readme-the-rss@master
+      - uses: gautamkrishnar/blog-post-workflow@master
         with:
-          feed_url: https://www.mushfiqweb.com/feed
-          count: 10
-      - name: Commit file changes
-        run: |
-            git config --global user.name 'mushfiqweb'
-            git config --global user.email 'hello@mushfiqweb.com'
-            git add .
-            git diff --quiet --cached || git commit -m "Update README" 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          feed_list: "https://www.mushfiqweb.com/feed/"
