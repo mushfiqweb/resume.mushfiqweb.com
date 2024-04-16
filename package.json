@@ -1,20 +1,6 @@
 {
-  "name": "resume",
-  "version": "1.0.0",
-  "description": "My Resume",
-  "main": "index.html",
-  "scripts": {
-    "build": "rsync -r ./ build && echo build completed!",
-    "postbuild": "firebase deploy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mushfiqweb/resume.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mushfiqweb/resume/issues"
-  },
-  "homepage": "https://resume.mushfiqweb.com"
+  "private": true,
+  "dependencies": {
+    "@vercel/edge": "^0.1.2"
+  }
 }
