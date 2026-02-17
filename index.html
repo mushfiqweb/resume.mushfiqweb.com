@@ -65,6 +65,104 @@
 		.item-content>p {
 			text-align: justify;
 		}
+
+		/* Download Button Styles */
+		.resume-contact {
+			position: relative;
+		}
+
+		.download-btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 45px;
+			height: 45px;
+			padding: 0;
+			color: #ffffff;
+			background: #2c3e50;
+			border: none;
+			border-radius: 50%;
+			box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+			cursor: pointer;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			position: absolute;
+			overflow: hidden;
+			text-decoration: none;
+			top: 0;
+			right: -60px;
+		}
+
+		.download-btn:hover {
+			transform: translateY(-1px) scale(1.05);
+			/* box-shadow: 0 6px 20px rgba(44, 62, 80, 0.5); */
+			background: #ecf0f1;
+			color: #2c3e50;
+			border: 1px solid #2c3e50;
+		}
+
+		.download-btn:active {
+			transform: translateY(0) scale(0.95);
+			box-shadow: 0 2px 10px rgba(44, 62, 80, 0.3);
+		}
+
+		.download-icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 22px;
+			height: 22px;
+			position: relative;
+			transition: transform 0.3s ease;
+		}
+
+		.download-btn:hover .download-icon {
+			animation: downloadMotion 0.8s ease-in-out infinite;
+		}
+
+		@keyframes downloadMotion {
+
+			0%,
+			100% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(4px);
+			}
+		}
+
+		/* Ripple effect */
+		.download-btn::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 0;
+			height: 0;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.5);
+			transform: translate(-50%, -50%);
+			transition: width 0.6s, height 0.6s;
+		}
+
+		.download-btn:active::before {
+			width: 100px;
+			height: 100px;
+		}
+
+		/* Responsive design */
+		@media (max-width: 768px) {
+			.download-btn {
+				width: 40px;
+				height: 40px;
+				margin-left: 8px;
+			}
+
+			.download-icon {
+				width: 20px;
+				height: 20px;
+			}
+		}
 	</style>
 
 </head>
@@ -88,6 +186,16 @@
 						</div>
 						<!--//resume-title-->
 						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
+							<a href="MushfiqurRahmanShishir.pdf" download="MushfiqurRahmanShishir.pdf"
+								class="download-btn" title="Download Resume">
+								<svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+							</a>
 							<ul class="list-unstyled mb-0">
 								<li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a
 										class="resume-link" href="tel:+8801711340020">+880 1711 340020</a></li>
