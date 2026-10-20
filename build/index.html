@@ -65,6 +65,104 @@
 		.item-content>p {
 			text-align: justify;
 		}
+
+		/* Download Button Styles */
+		.resume-contact {
+			position: relative;
+		}
+
+		.download-btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 45px;
+			height: 45px;
+			padding: 0;
+			color: #ffffff;
+			background: #2c3e50;
+			border: none;
+			border-radius: 50%;
+			box-shadow: 0 4px 15px rgba(44, 62, 80, 0.3);
+			cursor: pointer;
+			transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			position: absolute;
+			overflow: hidden;
+			text-decoration: none;
+			top: 0;
+			right: -60px;
+		}
+
+		.download-btn:hover {
+			transform: translateY(-1px) scale(1.05);
+			/* box-shadow: 0 6px 20px rgba(44, 62, 80, 0.5); */
+			background: #ecf0f1;
+			color: #2c3e50;
+			border: 1px solid #2c3e50;
+		}
+
+		.download-btn:active {
+			transform: translateY(0) scale(0.95);
+			box-shadow: 0 2px 10px rgba(44, 62, 80, 0.3);
+		}
+
+		.download-icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 22px;
+			height: 22px;
+			position: relative;
+			transition: transform 0.3s ease;
+		}
+
+		.download-btn:hover .download-icon {
+			animation: downloadMotion 0.8s ease-in-out infinite;
+		}
+
+		@keyframes downloadMotion {
+
+			0%,
+			100% {
+				transform: translateY(0);
+			}
+
+			50% {
+				transform: translateY(4px);
+			}
+		}
+
+		/* Ripple effect */
+		.download-btn::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 0;
+			height: 0;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.5);
+			transform: translate(-50%, -50%);
+			transition: width 0.6s, height 0.6s;
+		}
+
+		.download-btn:active::before {
+			width: 100px;
+			height: 100px;
+		}
+
+		/* Responsive design */
+		@media (max-width: 768px) {
+			.download-btn {
+				width: 40px;
+				height: 40px;
+				margin-left: 8px;
+			}
+
+			.download-icon {
+				width: 20px;
+				height: 20px;
+			}
+		}
 	</style>
 
 </head>
@@ -82,12 +180,22 @@
 						</div>
 						<div class="resume-title col-12 col-md-6 col-lg-4 col-xl-6">
 							<h2 class="resume-name mb-0 text-uppercase">Mushfiqur Rahman Shishir</h2>
-							<div class="resume-tagline mb-3 mb-md-0">Principal Software Engineer @ <a
-									href="https://www.asthait.com/" class="dark-link dark-hover6"
-									target="_blank">Astha.IT</a> </div>
+							<div class="resume-tagline mb-3 mb-md-0">CTO @ <a
+									title="AGT Software Partners" href="https://allgentech.io/"
+									class="dark-link dark-hover6" target="_blank">AGT Software Partners</a> </div>
 						</div>
 						<!--//resume-title-->
 						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
+							<a href="MushfiqurRahmanShishir.pdf" download="MushfiqurRahmanShishir.pdf"
+								class="download-btn" title="Download Resume">
+								<svg class="download-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+									stroke-linejoin="round">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+							</a>
 							<ul class="list-unstyled mb-0">
 								<li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a
 										class="resume-link" href="tel:+8801711340020">+880 1711 340020</a></li>
@@ -109,59 +217,39 @@
 				<div class="resume-intro py-3">
 					<div class="media flex-column flex-md-row align-items-center">
 						<div class="media-body text-left">
-							<!-- <p class="mb-0" style="text-align: justify;">
-								A profound, honest <b>Full Stack Developer</b> with a passion for creating delicate
-								solutions in the least amount of time, with more than <b>nine years of experience</b> in
-								<b>
-									Application Development</b>. Implemented <b>complex user stories</b> that make the
-								business
-								count on more <b>conversion and grow</b> with it. I have started my career with
-								<strong>.NET</strong> technologies but later overhauled my skills with <strong>
-									ASP.NET Core, Node, TypeScript, Ruby on Rails</strong>, and
-								<strong>Android</strong>. Throughout my career, I
-								have contributed to the businesses that <b>positively impacted </b> society through
-								<b>my active and innovative contributions</b>
-								to the organization's growth. While being an <b>independently motivated engineer</b>, I
-								appreciate the <b>collective efforts and collaborative productivity</b> within the team
-								environment.
-								I am <b>open-minded and focused on learning new technologies</b> that directly impact
-								the <b>betterment of human lives</b>.
-							</p> -->
+
+							<h6>
+								Principal Software Engineer, Architect of Scalable, Business-Driven Solutions!
+							</h6>
 
 							<p>
-								I'm working as a Principal Software Engineer driven by a passion for understanding
-								complex systems
-								and transforming requirements into elegant solutions. My technical toolkit includes REST
-								API using
-								<strong>NodeJS</strong> & <strong>NestJs</strong>, <strong>JavaScript</strong>,
-								<strong>Typescript</strong>,
-								<strong>React</strong>, <strong>PHP</strong>, and <strong>ASP.NET</strong>, enabling me
-								to build robust,
-								user-centric web applications.
-							</p>
-							<!-- <p>
-								With a problem-solver's mindset and a love for analysis, I excel in breaking down
-								intricate needs. But technical skills are only part of the picture.
-							</p> -->
-							<p>
-								Have a decade long experience in various industries, including e-commerce, finance,
-								and telecom, I bring a wealth of experience to the table. My ability
-								to adapt to new environments, collaborate effectively with teams, and communicate
-								technical concepts has been instrumental in delivering successful outcomes.
-							</p>
-							<!-- <p>
-								I'm also a Tech Geek constantly on the lookout for innovation, an Audiophile with an ear
-								for detail, and a Cinephile captivated by storytelling. Above all, I'm a Lifelong
-								Learner who sees growth as an ongoing journey, fueling my work with constant discovery.
+								I design and deliver <strong>high-impact</strong> software that bridges complex
+								technical challenges with clear business outcomes. With deep expertise in <strong>Web
+									Applications</strong> and
+								<strong>REST APIs</strong>—spanning
+								<strong>Node.js, JavaScript, TypeScript, React, .NET Core, JAVA, and PHP
+									Laravel</strong>—I specialize in
+								building <strong>robust</strong>, <strong>scalable</strong>, and
+								<strong>user-centric</strong> platforms.
 							</p>
 							<p>
-								As a perpetual student, insatiable learner, and relentless problem-solver, I am poised
-								to contribute my diverse skillset, creative mindset, and unwavering dedication to any
-								team or project, leaving an indelible mark on the digital tapestry shaping our world.
-							</p> -->
-
+								Over the past decade, I have led projects across <strong>e-commerce</strong>,
+								<strong>finance</strong>, <strong>insurance</strong>, and
+								<strong>telecommunications</strong>,
+								blending strategic vision with hands-on engineering. I thrive in
+								<strong>fast-moving
+									environments</strong>, foster <strong>collaboration across diverse teams</strong>,
+								and translate
+								<strong>technical
+									concepts into actionable insights</strong> for stakeholders.
+							</p>
+							<p>
+								My work consistently delivers measurable results—whether <strong>optimizing
+									performance</strong>, enabling
+								<strong>revenue streams</strong>, or delivering <strong>mission-critical</strong>
+								systems that power <strong>business growth</strong>.
+							</p>
 						</div>
-						<!--//media-body-->
 					</div>
 				</div>
 				<!--//resume-intro-->
@@ -174,27 +262,55 @@
 
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Principal Software
-											Engineer</h4>
-										<div
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">CTO
+										</h4>
+										<div style="padding: 0 !important;"
 											class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">
-											<a class="work-company dark-link dark-hover6" href="https://asthait.com/"
-												title="Astha.IT" target="_blank">Astha.IT</a> | 2023 - Present
+											<a title="AGT Software Partners" href="https://allgentech.io/"
+												class="work-company dark-link dark-hover6" target="_blank">
+												AGT Software Partners</a>
+											| 2024 - Present
 										</div>
 									</div>
 									<div class="item-content">
 										<p>
-											From <em>March 2023</em>, I have started at <a
-												class="work-company dark-link dark-hover6" href="https://asthait.com/"
-												title="Astha.IT" target="_blank">Astha.IT</a> as a <a
-												class="dark-link dark-hover6"
-												href="https://www.google.com/search?q=Principal+Software+Engineer"
-												title="Principal Software Engineer" target="_blank">Principal Software
-												Engineer</a> to
-											work for <a class="work-company dark-link dark-hover6"
+											Since August 2024, I have collaborated on multiple
+											<strong>high-impact</strong> projects at <a title="AGT Software Partners"
+												href="https://allgentech.io/" class="work-company dark-link dark-hover6"
+												target="_blank">
+												AGT Software Partners</a> across
+											<strong>cross-functional</strong> teams, driving innovation and
+											delivering business-aligned solutions.
+										</p>
+									</div>
+								</div>
+
+								<div class="item mb-3">
+									<div class="item-heading row align-items-center mb-2">
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Principal Software
+											Engineer</h4>
+										<div
+											class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">
+											<a class="work-company dark-link dark-hover6" href="https://ait.inc/"
+												title="AsthaIT aka AIT" target="_blank">AsthaIT aka AIT</a> | 2023 -
+											2024
+										</div>
+									</div>
+									<div class="item-content">
+										<p>
+
+											Served as Principal Software Engineer at <a
+												class="work-company dark-link dark-hover6" href="https://ait.inc/"
+												title="AsthaIT aka AIT" target="_blank">AsthaIT aka AIT</a> (Mar
+											2023 – Aug 2024),
+											embedded within <a class="work-company dark-link dark-hover6"
 												href="https://banglalink.net/"
 												title="Banglalink Digital Communications Ltd" target="_blank">Banglalink
-												Digital</a>.
+												Digital</a>,
+											leading the design and delivery of scalable web applications and REST APIs.
+											I collaborated closely with cross-functional teams to align technical
+											solutions with business goals, optimize system performance,
+											and ensure timely delivery of high-impact digital initiatives.
 										</p>
 									</div>
 								</div>
@@ -212,11 +328,11 @@
 									</div>
 									<div class="item-content">
 										<p>
-											From <em>June 2021</em>, I have started at <a
-												class="work-company dark-link dark-hover6" href="https://miadvg.com/"
-												title="MIADVG" target="_blank">MIADVG</a> as a Full Stack Developer to
-											handle the application modules
-											of <a class="work-company dark-link dark-hover6"
+											Started at <a class="work-company dark-link dark-hover6"
+												href="https://miadvg.com/" title="MIADVG" target="_blank">MIADVG</a> in
+											<em>June 2021</em> as a Full Stack Developer,
+											managing the application modules
+											for <a class="work-company dark-link dark-hover6"
 												href="https://www.taxrise.com" title="taxrise"
 												target="_blank">TaxRise</a>.
 										</p>
@@ -289,19 +405,20 @@
 									</div>
 									<div class="item-content">
 										<p>
-											I started as a Fresher Software Developer at <a
+											Started as a Software Developer at <a
 												class="work-company dark-link dark-hover6" href="http://codemen.com"
-												title="Codemen" target="_blank">Codemen</a>. I
-											learned a lot about
+												title="Codemen" target="_blank">Codemen</a>, where I
+											developed expertise in
 											Web Application Development using <a
 												class="work-company dark-link dark-hover6"
 												href="https://dotnet.microsoft.com/apps/aspnet/mvc" title="ASP.NET MVC"
 												target="_blank">ASP.NET MVC</a>, <a
 												class="work-company dark-link dark-hover6" href="https://nodejs.org/"
-												title="ReactJs" target="_blank">NodeJs</a> and <a
+												title="ReactJs" target="_blank">NodeJs</a>, and <a
 												class="work-company dark-link dark-hover6" href="https://reactjs.org/"
 												title="ReactJs" target="_blank">ReactJS</a>.
-											My responsibility varied from facing clients meeting to turn clients idea
+											My responsibilities ranged from meeting with clients to transforming their
+											ideas
 											into business applications.
 										</p>
 									</div>
@@ -376,8 +493,8 @@
 									</div>
 									<div class="item-content">
 										<p>
-											It's been more than a year working with Banglalink, and partly led a team of
-											Engineers
+											Worked with Banglalink for over a year, partly leading a team of
+											engineers
 											responsible for the Content Management System of
 											the <a href="https://www.banglalink.net/en/apps-and-services/apps/mybl"
 												title="MyBL App" class="dark-link dark-hover6"
@@ -385,8 +502,9 @@
 													App</strong></a> for <a class="work-company dark-link dark-hover6"
 												href="https://banglalink.net/"
 												title="Banglalink Digital Communications Ltd" target="_blank">Banglalink
-												Digital</a>. My role involves actively participating in development and
-											managing all stages of the Software Development Life Cycle, from initial
+												Digital</a>. My role included active participation in development and
+											management of all stages of the Software Development Life Cycle, from
+											initial
 											requirement gathering to final product delivery.
 										</p>
 										<h3 class="resume-sub-heading mb-4">Key Contributions</h3>
@@ -455,7 +573,7 @@
 									</div>
 									<div class="item-content">
 										<p>
-											I worked on <a href="https://client.taxrise.com/" title="Client Portal"
+											Worked on the <a href="https://client.taxrise.com/" title="Client Portal"
 												target="_blank"><strong>Client Portal</strong></a>, <a
 												href="https://admin.taxrise.com/" title="Admin Portal"
 												target="_blank"><strong>Admin Portal</strong></a>, <a
@@ -463,13 +581,13 @@
 												target="_blank"><strong>Verifilink</strong></a>, and <a
 												title="Lead Form" target="_blank"
 												href="https://app.taxrise.com/"><strong>Lead Form</strong></a>
-											of <a href="https://app.taxrise.com/" title="TaxRise"
+											for <a href="https://app.taxrise.com/" title="TaxRise"
 												target="_blank">TaxRise</a>.
 										</p>
 										<h3 class="resume-sub-heading mb-4">Key Contributions</h3>
 										<ul>
 											<li>
-												Handling authentication on Frontend Applications
+												Managed authentication for frontend applications
 											</li>
 											<li>
 												Implemented User requested features on <a
@@ -579,11 +697,11 @@
 									</div>
 									<div class="item-content">
 										<p>
-											I have worked on the frontend of the <a href="https://db.echosourcing.com"
-												target="_blank">Buying House Management</a> which handles orders and <a
+											Worked on the frontend for <a href="https://db.echosourcing.com"
+												target="_blank">Buying House Management</a>, which handles orders and <a
 												target="_blank"
 												href="https://www.textileschool.com/364/garment-sampling">samples</a>
-											from marchandisers of <a href="http://www.echosourcing.com"
+											from merchandisers at <a href="http://www.echosourcing.com"
 												target="_blank">Echo Sourcing</a>.
 										</p>
 										<h3 class="resume-sub-heading mb-4">Key Contributions</h3>
@@ -635,14 +753,14 @@
 									</div>
 									<div class="item-content">
 										<p>
-											I have worked as a Frontend Engineer for <a
-												href="https://www.ninetypercent.com"
-												style="font-weight: bold;">NINETYPERCENT.COM</a>
-											which is an <a target="_blank" style="font-weight: bold;"
-												href="https://en.wikipedia.org/wiki/E-commerce">E-commerce</a> for a UK
-											based clothing label. My daily responsibilities included reviewing UX
-											provided by the designer, checking all the requirements with the
-											stakeholders and turning them into code with my teammates.
+											Worked as a Frontend Engineer for <a href="https://www.ninetypercent.com"
+												style="font-weight: bold;">NINETYPERCENT.COM</a>,
+											an <a target="_blank" style="font-weight: bold;"
+												href="https://en.wikipedia.org/wiki/E-commerce">E-commerce</a> platform
+											for a UK-based
+											clothing label. My daily responsibilities included reviewing UX
+											designs, validating requirements with
+											stakeholders, and implementing them in code with my teammates.
 										</p>
 										<h3 class="resume-sub-heading mb-4">Key Contributions</h3>
 										<ul>
@@ -737,16 +855,16 @@
 								<h3 class="text-uppercase resume-section-heading mb-4">Languages</h3>
 								<ul class="list-unstyled resume-lang-list">
 									<li class="mb-2">Bengali<span class="text-muted">(Native)</span></li>
-									<li>English <span class="text-muted">(Professional)</span></li>
+									<li>English <span class="text-muted">(Fluent)</span></li>
 								</ul>
 							</section>
 							<!--//certificates-section-->
 							<section class="skills-section py-3">
 								<h3 class="text-uppercase resume-section-heading mb-4">Interests</h3>
 								<ul class="list-unstyled resume-interests-list mb-0">
+									<li class="mb-2">Visual and Sound Effects</li>
+									<li class="mb-2">Films</li>
 									<li class="mb-2">Photography</li>
-									<li class="mb-2">Sound Engineering</li>
-									<li class="mb-2">VFX</li>
 								</ul>
 							</section>
 							<!--//certificates-section-->
